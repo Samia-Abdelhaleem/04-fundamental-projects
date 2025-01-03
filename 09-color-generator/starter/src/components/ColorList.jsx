@@ -6,8 +6,8 @@ import { nanoid } from "nanoid";
 const ColorList = ({ colors }) => {
   return (
     <div className="colors">
-      {colors.map((color, index) => (
-        <SingleColor key={nanoid()} color={color} index={index} />
+      {colors.map((color) => (
+        <SingleColor key={nanoid()} color={color} />
       ))}
     </div>
   );
