@@ -4,15 +4,13 @@ import Form from "./components/Form";
 import Values from "values.js";
 import { ToastContainer, toast } from "react-toastify";
 const App = () => {
-  const [colorsList, setColorsList] = useState(new Values("#f15025").getAll());
+  const [colorsList, setColorsList] = useState(new Values("#f15025").all(10));
 
   const generateColors = (color) => {
     try {
-      const allColors = new Values(color).getAll();
+      const allColors = new Values(color).all();
       setColorsList(allColors);
     } catch (error) {
-      console.log("🚀 ~ generateColors ~ error:", error);
-
       toast.error(error.message);
     }
   };
